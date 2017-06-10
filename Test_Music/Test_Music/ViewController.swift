@@ -30,11 +30,12 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
         prepareStarButton()
         prepareSearchButton()
         prepareNavigation()
-        setupRealm()
-        prepareTableView()
-        displayRealm()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        setupRealm()
+        prepareTableView()
+    }
     
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +47,6 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
         self.reloadObjects()
         ViewController.notificationToken = realm.addNotificationBlock { (notification, realm) in
            self.reloadObjects()
-            print(self.playlists.count)
         }
         
     }
@@ -92,9 +92,9 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
         mediaPicker.dismiss(animated: true, completion: nil)
         addToRealm(playlist: self.playlist, mediaItems: items)
     }
-
-    func displayRealm(){
-        print(playlists.count)
+    
+    func mediaPickerDidCancel(_ mediaPicker: MPMediaPickerController) {
+        mediaPicker.dismiss(animated: true, completion: nil)
     }
     
     func addToRealm(playlist : Playlist, mediaItems : [MPMediaItem]) {
@@ -103,11 +103,12 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
             let imageData = UIImagePNGRepresentation(image!)
             playlist.songs.append(Song(value: ["imageData" : imageData?.base64EncodedString(options: .endLineWithCarriageReturn), "presistenID" : "\(item.persistentID)","songName":item.title,"artistName" : item.albumArtist]))
         }
-        realm.beginWrite()
-        realm.create(Playlist.self , value : ["name" : playlist.name,"songs":playlist.songs,"id":playlists.count+1], update : true)
-        try! realm.commitWrite()
-        displayRealm()
+        try! realm.write {
+            realm.create(Playlist.self , value : ["name" : playlist.name,"songs":playlist.songs,"id":playlists.count+1], update : true)
+            try! realm.commitWrite()
+        }
     }
+    
     
     
 }

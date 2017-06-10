@@ -11,7 +11,7 @@ import Material
 import Graph
 
 class PlaylistCell: TableViewCell {
-    private var spacing: CGFloat = 10
+    private var spacing: CGFloat = 15
     
     /// A boolean that indicates whether the cell is the last cell.
     public var isLast = false
@@ -49,9 +49,9 @@ class PlaylistCell: TableViewCell {
         
         toolbar.title = d.name
         let songFirst = d.songs.first
-        
-        if let image = UIImage(data: Data(base64Encoded: (songFirst?.imageData)!)!)?.resize(toHeight: 100) {
-            presenterImageView.height = image.height
+        let image = UIImage(data: Data(base64Encoded: (songFirst?.imageData)!)!)?.resize(toHeight: 100)
+        if  image != nil {
+            presenterImageView.height = (image?.height)!
             DispatchQueue.main.async { [weak self, image = image] in
                 self?.presenterImageView.image = image
             }
@@ -98,7 +98,7 @@ class PlaylistCell: TableViewCell {
         card.presenterView = presenterImageView
         card.contentViewEdgeInsetsPreset = .square3
         card.contentViewEdgeInsets.bottom = 0
-        card.depthPreset = .depth3
+        card.depthPreset = .depth5
         contentView.addSubview(card)
     }
 
