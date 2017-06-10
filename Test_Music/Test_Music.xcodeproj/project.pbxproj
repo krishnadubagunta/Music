@@ -11,13 +11,15 @@
 		6B299F731EEA5720006153F7 /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F721EEA5720006153F7 /* AppNavigationController.swift */; };
 		6B299F761EEA575D006153F7 /* ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F741EEA575D006153F7 /* ButtonLayout.swift */; };
 		6B299F771EEA575D006153F7 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F751EEA575D006153F7 /* UIColor.swift */; };
+		6B299F7D1EEB6336006153F7 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F7C1EEB6336006153F7 /* Playlist.swift */; };
+		6B299F7F1EEB637E006153F7 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F7E1EEB637E006153F7 /* Song.swift */; };
+		6B299F811EEB9AE5006153F7 /* alertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F801EEB9AE5006153F7 /* alertView.swift */; };
 		6B67699E1EE9B4910075F136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67699D1EE9B4910075F136 /* AppDelegate.swift */; };
 		6B6769A01EE9B4910075F136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67699F1EE9B4910075F136 /* ViewController.swift */; };
 		6B6769A31EE9B4910075F136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B6769A11EE9B4910075F136 /* Main.storyboard */; };
 		6B6769A61EE9B4910075F136 /* Test_Music.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B6769A41EE9B4910075F136 /* Test_Music.xcdatamodeld */; };
 		6B6769A81EE9B4910075F136 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B6769A71EE9B4910075F136 /* Assets.xcassets */; };
 		6B6769AB1EE9B4910075F136 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B6769A91EE9B4910075F136 /* LaunchScreen.storyboard */; };
-		6B6769B31EE9D2480075F136 /* RealmPlaylists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6769B21EE9D2480075F136 /* RealmPlaylists.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,9 @@
 		6B299F721EEA5720006153F7 /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		6B299F741EEA575D006153F7 /* ButtonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonLayout.swift; sourceTree = "<group>"; };
 		6B299F751EEA575D006153F7 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		6B299F7C1EEB6336006153F7 /* Playlist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		6B299F7E1EEB637E006153F7 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		6B299F801EEB9AE5006153F7 /* alertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alertView.swift; sourceTree = "<group>"; };
 		6B67699A1EE9B4910075F136 /* Test_Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_Music.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B67699D1EE9B4910075F136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B67699F1EE9B4910075F136 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +38,6 @@
 		6B6769A71EE9B4910075F136 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B6769AA1EE9B4910075F136 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B6769AC1EE9B4910075F136 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B6769B21EE9D2480075F136 /* RealmPlaylists.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPlaylists.swift; sourceTree = "<group>"; };
 		BF2D1DFF9207298B2463DFE7 /* Pods-Test_Music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_Music.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Test_Music/Pods-Test_Music.debug.xcconfig"; sourceTree = "<group>"; };
 		C50AB6240882EDD5C670B0E5 /* Pods-Test_Music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_Music.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test_Music/Pods-Test_Music.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,10 +77,12 @@
 			children = (
 				6B67699D1EE9B4910075F136 /* AppDelegate.swift */,
 				6B67699F1EE9B4910075F136 /* ViewController.swift */,
+				6B299F801EEB9AE5006153F7 /* alertView.swift */,
+				6B299F7C1EEB6336006153F7 /* Playlist.swift */,
+				6B299F7E1EEB637E006153F7 /* Song.swift */,
 				6B6769A11EE9B4910075F136 /* Main.storyboard */,
 				6B299F741EEA575D006153F7 /* ButtonLayout.swift */,
 				6B299F751EEA575D006153F7 /* UIColor.swift */,
-				6B6769B21EE9D2480075F136 /* RealmPlaylists.swift */,
 				6B6769A71EE9B4910075F136 /* Assets.xcassets */,
 				6B6769A91EE9B4910075F136 /* LaunchScreen.storyboard */,
 				6B6769AC1EE9B4910075F136 /* Info.plist */,
@@ -227,10 +233,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B299F7F1EEB637E006153F7 /* Song.swift in Sources */,
 				6B6769A61EE9B4910075F136 /* Test_Music.xcdatamodeld in Sources */,
 				6B299F771EEA575D006153F7 /* UIColor.swift in Sources */,
-				6B6769B31EE9D2480075F136 /* RealmPlaylists.swift in Sources */,
+				6B299F7D1EEB6336006153F7 /* Playlist.swift in Sources */,
 				6B6769A01EE9B4910075F136 /* ViewController.swift in Sources */,
+				6B299F811EEB9AE5006153F7 /* alertView.swift in Sources */,
 				6B299F761EEA575D006153F7 /* ButtonLayout.swift in Sources */,
 				6B67699E1EE9B4910075F136 /* AppDelegate.swift in Sources */,
 				6B299F731EEA5720006153F7 /* AppNavigationController.swift in Sources */,

@@ -18,19 +18,16 @@ class AppNavigationController: NavigationController {
         
         let vb = navigationItem
         vb.titleLabel.tintColor = Color.red
-        
         v.barTintColor = Color.white
         v.depthPreset = .depth3
         v.dividerColor = Color.white
-        
-        
     }
     
     // Preferred status bar style lightContent to use on dark background.
     // Swift 3
     override var preferredStatusBarStyle: UIStatusBarStyle {
         //LightContent
-        return UIStatusBarStyle.lightContent
+        return UIStatusBarStyle.default
     }
     
     override var prefersStatusBarHidden: Bool {
