@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Graph.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Material-com.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +37,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>24A789431E44386F9C9A25EA3E16068B</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3106EDE4A396D29EE7077A2391922078</key>
+		<key>086E02FBF2A91F058EEE91364DB23032</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,17 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4923043726BB11919ABFAD66469EA4C4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4D6775992BD13BB8E655486FEA498C67</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>8D511562A8961C5B7A5DD87BAE2374F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>90F84E860C48E18FF75478EFAE85278A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EA188CE390AA284E41A07466F1D24927</key>
 		<dict>
 			<key>primary</key>
 			<true/>
