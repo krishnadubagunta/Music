@@ -16,9 +16,6 @@ class AppNavigationController: NavigationController {
             return
         }
         
-        let vb = navigationItem
-        vb.titleLabel.tintColor = Color.red
-        v.barTintColor = Color.white
         v.depthPreset = .depth3
         v.dividerColor = Color.white
     }
@@ -31,7 +28,7 @@ class AppNavigationController: NavigationController {
     }
     
     override var prefersStatusBarHidden: Bool {
-        return true
+        return false
     }
 
 }

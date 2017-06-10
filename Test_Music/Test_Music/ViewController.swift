@@ -11,7 +11,8 @@ import Material
 import MediaPlayer
 import RealmSwift
 
-class ViewController: UIViewController, MPMediaPickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, MPMediaPickerControllerDelegate{
+    internal lazy var heights = [IndexPath: CGFloat]()
     
     var playlists  : Results<Playlist>!
     var songs : MPMediaQuery!
@@ -19,21 +20,22 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate, UITable
     fileprivate var starButton: IconButton!
     fileprivate var searchButton: IconButton!
     fileprivate var realm = try! Realm()
-    var notificationToken : NotificationToken?
+    static var notificationToken : NotificationToken?
     var playlist = Playlist()
-    var tableView : UITableView!
+    var tableView : playListTableView! = playListTableView()
     static var realm : Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareMenuButton()
         prepareStarButton()
         prepareSearchButton()
         prepareNavigation()
         setupRealm()
-        self.tableView.delegate = self
-        
+        prepareTableView()
+        displayRealm()
     }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,20 +43,19 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate, UITable
     }
     
     func setupRealm() {
-        self.notificationToken = realm.addNotificationBlock { (notification, realm) in
-            self.playlists = realm.objects(Playlist.self)
-            self.tableView.reloadData()
+        self.reloadObjects()
+        ViewController.notificationToken = realm.addNotificationBlock { (notification, realm) in
+           self.reloadObjects()
+            print(self.playlists.count)
         }
         
     }
     
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0;
+    func reloadObjects () {
+        self.playlists = realm.objects(Playlist.self)
+        tableView.data = playlists.sorted(byKeyPath: "id", ascending: false).reversed()
     }
     
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        return UITableViewCell()
-    }
     
     @objc fileprivate func addSongs() {
         
@@ -64,21 +65,27 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate, UITable
         alert.addTextField { (textField) in
             return
         }
-        alert.addAction(UIAlertAction(title: "Done", style: .cancel, handler: { (action) in
+        alert.addAction(UIAlertAction(title: "Done", style: .destructive, handler: { (action) in
             
             let playlistName = alert.textFields?[0].text
-            self.playlist = Playlist()
-            self.playlist.name = playlistName!
-            
+            if playlistName != "" {
+                self.playlist = Playlist()
+                self.playlist.name = playlistName!
+                
                 let picker = MPMediaPickerController.init(mediaTypes: .music)
                 picker.allowsPickingMultipleItems = true
                 picker.showsCloudItems = true
                 picker.delegate = self
                 self.present(picker, animated: true, completion: nil)
-            
+                
+            }
+            else{
+                alert.dismiss(animated: true, completion: nil)
+            }
         }))
         self.present(alert, animated: true, completion:nil)
     }
+
 
     public func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection){
         let items = mediaItemCollection.items
@@ -87,25 +94,26 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate, UITable
     }
 
     func displayRealm(){
-        let results = realm.objects(Playlist.self)
-        print(results)
+        print(playlists.count)
     }
     
     func addToRealm(playlist : Playlist, mediaItems : [MPMediaItem]) {
         for item in mediaItems {
-            let image = item.artwork?.image(at: CGSize(width: 100, height: 100))
+            let image = item.artwork?.image(at: (item.artwork?.bounds.size)!)
             let imageData = UIImagePNGRepresentation(image!)
             playlist.songs.append(Song(value: ["imageData" : imageData?.base64EncodedString(options: .endLineWithCarriageReturn), "presistenID" : "\(item.persistentID)","songName":item.title,"artistName" : item.albumArtist]))
         }
         realm.beginWrite()
-        realm.create(Playlist.self , value : ["name" : playlist.name,"songs":playlist.songs])
+        realm.create(Playlist.self , value : ["name" : playlist.name,"songs":playlist.songs,"id":playlists.count+1], update : true)
         try! realm.commitWrite()
+        displayRealm()
     }
     
     
 }
 
 extension ViewController {
+    
     fileprivate func prepareNavigation() {
         navigationItem.title = "Playlists"
         navigationItem.titleLabel.textColor = Color.colorPrimary
@@ -113,19 +121,23 @@ extension ViewController {
         navigationItem.rightViews = [starButton]
     }
     
-    fileprivate func prepareMenuButton() {
-        menuButton = IconButton(image: Icon.cm.menu)
-        menuButton.tintColor = Color.colorPrimary
-    }
-    
     fileprivate func prepareStarButton() {
         starButton = IconButton(image: Icon.cm.add)
         starButton.tintColor = Color.colorPrimary
+        starButton.pulseColor = Color.colorPrimary
         starButton.addTarget(self, action: #selector(addSongs), for: .touchUpInside)
     }
     
     fileprivate func prepareSearchButton() {
         searchButton = IconButton(image: Icon.cm.search)
         searchButton.tintColor = Color.colorPrimary
+        searchButton.pulseColor = Color.colorPrimary
+    }
+    
+    fileprivate func prepareTableView() {
+        tableView = playListTableView()
+        view.layout(tableView).edges()
+        tableView.data = playlists.sorted(byKeyPath: "id", ascending: false).reversed()
+        
     }
 }

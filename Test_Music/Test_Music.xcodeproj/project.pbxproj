@@ -15,6 +15,9 @@
 		6B299F7F1EEB637E006153F7 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F7E1EEB637E006153F7 /* Song.swift */; };
 		6B299F811EEB9AE5006153F7 /* alertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F801EEB9AE5006153F7 /* alertView.swift */; };
 		6B299F831EEC4A0C006153F7 /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F821EEC4A0C006153F7 /* PlaylistCell.swift */; };
+		6B299F851EEC7F67006153F7 /* playListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F841EEC7F67006153F7 /* playListTableView.swift */; };
+		6B299F871EEC84A1006153F7 /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F861EEC84A1006153F7 /* SongsViewController.swift */; };
+		6B299F891EEC9151006153F7 /* artworkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F881EEC9151006153F7 /* artworkCell.swift */; };
 		6B67699E1EE9B4910075F136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67699D1EE9B4910075F136 /* AppDelegate.swift */; };
 		6B6769A01EE9B4910075F136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67699F1EE9B4910075F136 /* ViewController.swift */; };
 		6B6769A61EE9B4910075F136 /* Test_Music.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B6769A41EE9B4910075F136 /* Test_Music.xcdatamodeld */; };
@@ -31,6 +34,9 @@
 		6B299F7E1EEB637E006153F7 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		6B299F801EEB9AE5006153F7 /* alertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = alertView.swift; sourceTree = "<group>"; };
 		6B299F821EEC4A0C006153F7 /* PlaylistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
+		6B299F841EEC7F67006153F7 /* playListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playListTableView.swift; sourceTree = "<group>"; };
+		6B299F861EEC84A1006153F7 /* SongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
+		6B299F881EEC9151006153F7 /* artworkCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = artworkCell.swift; sourceTree = "<group>"; };
 		6B67699A1EE9B4910075F136 /* Test_Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_Music.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B67699D1EE9B4910075F136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B67699F1EE9B4910075F136 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +83,9 @@
 			children = (
 				6B67699D1EE9B4910075F136 /* AppDelegate.swift */,
 				6B67699F1EE9B4910075F136 /* ViewController.swift */,
+				6B299F841EEC7F67006153F7 /* playListTableView.swift */,
+				6B299F861EEC84A1006153F7 /* SongsViewController.swift */,
+				6B299F881EEC9151006153F7 /* artworkCell.swift */,
 				6B299F821EEC4A0C006153F7 /* PlaylistCell.swift */,
 				6B299F801EEB9AE5006153F7 /* alertView.swift */,
 				6B299F7C1EEB6336006153F7 /* Playlist.swift */,
@@ -233,10 +242,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B299F7F1EEB637E006153F7 /* Song.swift in Sources */,
+				6B299F871EEC84A1006153F7 /* SongsViewController.swift in Sources */,
+				6B299F851EEC7F67006153F7 /* playListTableView.swift in Sources */,
 				6B6769A61EE9B4910075F136 /* Test_Music.xcdatamodeld in Sources */,
 				6B299F771EEA575D006153F7 /* UIColor.swift in Sources */,
 				6B299F831EEC4A0C006153F7 /* PlaylistCell.swift in Sources */,
 				6B299F7D1EEB6336006153F7 /* Playlist.swift in Sources */,
+				6B299F891EEC9151006153F7 /* artworkCell.swift in Sources */,
 				6B6769A01EE9B4910075F136 /* ViewController.swift in Sources */,
 				6B299F811EEB9AE5006153F7 /* alertView.swift in Sources */,
 				6B299F761EEA575D006153F7 /* ButtonLayout.swift in Sources */,
