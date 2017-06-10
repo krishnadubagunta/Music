@@ -1,4 +1,5 @@
 PODS:
+  - Graph (2.1.4)
   - Material (2.6.3):
     - Material/Core (= 2.6.3)
   - Material/Core (2.6.3)
@@ -9,14 +10,16 @@ PODS:
     - Realm (= 2.8.0)
 
 DEPENDENCIES:
+  - Graph
   - Material (~> 2.0)
   - RealmSwift
 
 SPEC CHECKSUMS:
+  Graph: 0f3a549c8597e6ab25a58c4a8f7276555ec5ba4d
   Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
   Realm: 929243ad2b618b3232e70658bedc61110e7563f1
   RealmSwift: 5b7079b891f2833d1849294161ba3e092bbda3f6
 
-PODFILE CHECKSUM: 20704a95cbd2b875d24c626ca3d47ec10592f290
+PODFILE CHECKSUM: 5303a7f971c3025a96f14a193e38a32d589eb73d
 
 COCOAPODS: 1.2.1

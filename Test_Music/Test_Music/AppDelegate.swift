@@ -18,8 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        var config = Realm.Configuration()
+        config.fileURL?.deleteLastPathComponent()
+        config.fileURL?.appendPathComponent("thisUser.realm")
+        Realm.Configuration.defaultConfiguration = config
+        ViewController.realm = try! Realm(configuration: config)
         window = UIWindow(frame: Screen.bounds)
         window!.rootViewController = AppNavigationController(rootViewController: ViewController())
+        window?.makeKeyAndVisible()
         return true
     }
 

@@ -11,7 +11,7 @@ import Material
 import MediaPlayer
 import RealmSwift
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MPMediaPickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     
     var playlists  : Results<Playlist>!
     var songs : MPMediaQuery!
@@ -19,40 +19,41 @@ class ViewController: UIViewController {
     fileprivate var starButton: IconButton!
     fileprivate var searchButton: IconButton!
     fileprivate var realm = try! Realm()
+    var notificationToken : NotificationToken?
     var playlist = Playlist()
-    let label  = UILabel(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+    var tableView : UITableView!
+    static var realm : Realm!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.playlists = retrieveData()
         prepareMenuButton()
         prepareStarButton()
         prepareSearchButton()
         prepareNavigation()
-        
-        self.view.addSubview(label)
-        
-        
-        MPMediaLibrary.requestAuthorization { (status) in
-            if status == MPMediaLibraryAuthorizationStatus.authorized {
-                self.songs = MPMediaQuery.songs()
-            }
-        }
-        
-        if (MPMediaLibrary.authorizationStatus() == MPMediaLibraryAuthorizationStatus.authorized) {
-            self.songs = MPMediaQuery.songs()
-        }
-        
-        let predicate = MPMediaPropertyPredicate(value: (songs?.items?.first)?.persistentID, forProperty: MPMediaItemPropertyPersistentID)
-        songs?.addFilterPredicate(predicate)
-        print(songs?.items?.first?.albumArtist ?? "Nil")
-        // Do any additional setup after loading the view, typically from a nib.
+        setupRealm()
+        self.tableView.delegate = self
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupRealm() {
+        self.notificationToken = realm.addNotificationBlock { (notification, realm) in
+            self.playlists = realm.objects(Playlist.self)
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0;
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        return UITableViewCell()
     }
     
     @objc fileprivate func addSongs() {
@@ -72,6 +73,7 @@ class ViewController: UIViewController {
                 let picker = MPMediaPickerController.init(mediaTypes: .music)
                 picker.allowsPickingMultipleItems = true
                 picker.showsCloudItems = true
+                picker.delegate = self
                 self.present(picker, animated: true, completion: nil)
             
         }))
@@ -80,9 +82,14 @@ class ViewController: UIViewController {
 
     public func mediaPicker(_ mediaPicker: MPMediaPickerController, didPickMediaItems mediaItemCollection: MPMediaItemCollection){
         let items = mediaItemCollection.items
+        mediaPicker.dismiss(animated: true, completion: nil)
         addToRealm(playlist: self.playlist, mediaItems: items)
     }
 
+    func displayRealm(){
+        let results = realm.objects(Playlist.self)
+        print(results)
+    }
     
     func addToRealm(playlist : Playlist, mediaItems : [MPMediaItem]) {
         for item in mediaItems {
@@ -90,21 +97,11 @@ class ViewController: UIViewController {
             let imageData = UIImagePNGRepresentation(image!)
             playlist.songs.append(Song(value: ["imageData" : imageData?.base64EncodedString(options: .endLineWithCarriageReturn), "presistenID" : "\(item.persistentID)","songName":item.title,"artistName" : item.albumArtist]))
         }
-        try! realm.write {
-            realm.create(Playlist.self, value: ["name":playlist.name,"songs":playlist.songs], update: true)
-        }
-        
-        
-        
-        self.playlists = self.retrieveData()
+        realm.beginWrite()
+        realm.create(Playlist.self , value : ["name" : playlist.name,"songs":playlist.songs])
+        try! realm.commitWrite()
     }
     
-    func retrieveData() -> Results<Playlist> {
-        let playlists = realm.objects(Playlist.self)
-        print(playlists)
-        self.label.text = "\(playlists.count)"
-        return playlists
-    }
     
 }
 
