@@ -60,11 +60,11 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
     @objc fileprivate func addSongs() {
         
         let alert = UIAlertController(title: "Playlist Name", message: "", preferredStyle: .alert)
-        let view = alertView(frame: alert.view.frame)
-        view.tag = 45
+        
         alert.addTextField { (textField) in
             return
         }
+        
         alert.addAction(UIAlertAction(title: "Done", style: .destructive, handler: { (action) in
             
             let playlistName = alert.textFields?[0].text
