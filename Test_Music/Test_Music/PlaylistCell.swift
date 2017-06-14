@@ -48,7 +48,7 @@ class PlaylistCell: TableViewCell {
         
         toolbar.title = d.name
         let songFirst = d.songs.first
-        let image = UIImage(data: Data(base64Encoded: (songFirst?.imageData)!)!)?.resize(toHeight: 100)
+        let image = UIImage(data: Data(base64Encoded: (songFirst?.imageData)!)!)?.resize(toHeight: 100)?.resize(toWidth: UIScreen.main.bounds.size.width - 40)
         if  image != nil {
             presenterImageView.height = (image?.height)!
             DispatchQueue.main.async { [weak self, image = image] in

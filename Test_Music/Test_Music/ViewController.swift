@@ -109,7 +109,9 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
         }
     }
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        ViewController.notificationToken?.stop()
+    }
     
 }
 

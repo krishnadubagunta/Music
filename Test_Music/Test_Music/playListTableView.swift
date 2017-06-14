@@ -62,6 +62,8 @@ extension playListTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heights[indexPath] ?? height
     }
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         SongsViewController.playlist = data[indexPath.row]
         SongsViewController.realm = ViewController.realm

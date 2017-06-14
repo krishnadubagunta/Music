@@ -9,6 +9,8 @@ target 'Test_Music' do
   
   pod 'RealmSwift'
   pod 'Material', '~> 2.0'
+  pod 'FacebookCore'
+  pod 'FacebookLogin' 
   
   post_install do |installer|
       installer.pods_project.targets.each do |target|

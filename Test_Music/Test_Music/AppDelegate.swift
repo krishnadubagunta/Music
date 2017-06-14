@@ -9,6 +9,7 @@
 import UIKit
 import Material
 import RealmSwift
+import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,13 +19,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         var config = Realm.Configuration()
         config.fileURL?.deleteLastPathComponent()
         config.fileURL?.appendPathComponent("thisUser.realm")
         Realm.Configuration.defaultConfiguration = config
-        ViewController.realm = try! Realm(configuration: config)
+        let realm = try! Realm(configuration: config)
+        ViewController.realm = realm
         window = UIWindow(frame: Screen.bounds)
-        window!.rootViewController = AppNavigationController(rootViewController: ViewController())
+        if (FBSDKAccessToken.current() == nil) {
+            window!.rootViewController = AppNavigationController(rootViewController: OnboardingViewController())
+            window?.makeKeyAndVisible()
+            return true
+        }
+        window!.rootViewController = AppNavigationController(rootViewController: OnboardingViewController())
         window?.makeKeyAndVisible()
         return true
     }
@@ -50,6 +58,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
 
+    public func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        
+        let handled = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        return handled
+    }
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         ViewController.notificationToken = ViewController.realm.addNotificationBlock({ (notification, realm) in
