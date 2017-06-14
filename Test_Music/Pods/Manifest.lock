@@ -25,12 +25,14 @@ PODS:
   - Realm/Headers (2.8.0)
   - RealmSwift (2.8.0):
     - Realm (= 2.8.0)
+  - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - Material (~> 2.0)
   - RealmSwift
+  - SwiftyJSON
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -41,7 +43,8 @@ SPEC CHECKSUMS:
   Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
   Realm: 929243ad2b618b3232e70658bedc61110e7563f1
   RealmSwift: 5b7079b891f2833d1849294161ba3e092bbda3f6
+  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6290421307c89c405164808931583045dea54297
+PODFILE CHECKSUM: ec0cc25ebfaa7690f2efc35e009ffaae8436eaab
 
 COCOAPODS: 1.2.1

@@ -7,60 +7,72 @@
 //
 
 import UIKit
+import Material
 import FacebookLogin
-import FBSDKLoginKit
 import FBSDKCoreKit
+import SwiftyJSON
 
 class OnboardingViewController: UIViewController {
     
-    var loginButton : LoginManager!
+    var loginManager : LoginManager!
+    var loginButton : Button!
+    var imageString = ""
+    var name = ""
+    var id = ""
+    var friends : [Any]!
     
-    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-        
-        print("\n      \(result)" )
-        
-//        let realm = ViewController.realm!
-//        
-//        try! realm.write {
-//            realm.create(User.self, value: ["id": result], update: <#T##Bool#>)
-//        }
-    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton = LoginManager()
-        loginButton.logIn([.email,.publicProfile,.userFriends], viewController: self) { (result) in
-            switch result {
-            case .cancelled :
-                break
-            case .failed(let error) :
-                
-                break
-            case .success(grantedPermissions: let permission, declinedPermissions: let declined, token: let aToken) :
-                
-                break
-            }
-        }
+        loginManager = LoginManager()
+        prepareButton()
         // Do any additional setup after loading the view.
     }
 
     
-    
+    @objc func configureFacebook() {
+        loginManager.logIn([.email,.publicProfile,.userFriends, .custom("user_birthday"),.custom("user_photos")], viewController: self) { (result) in
+            switch result {
+            case .cancelled:
+                break
+            case .failed(let error) :
+                print(error)
+                break
+            case .success(grantedPermissions: _, declinedPermissions:  _, token: _) :
+                let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: ["fields" : "id,name,birthday,picture,friends{name,picture}"], httpMethod: "GET")
+                graphRequest?.start(completionHandler: { (connection, resultConnection, error) in
+                    connection?.cancel()
+                    let json = JSON.init(resultConnection!)
+                    self.imageString = try! Data.init(contentsOf: URL(string: json["picture"]["data"]["url"].string!)!).base64EncodedString()
+                    self.friends = json["friends"]["data"].arrayObject
+                    print(self.imageString)
+                    print("\n \(self.friends!)")
+                })
+                break
+            }
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+extension OnboardingViewController {
+    
+    fileprivate func prepareButton() {
+            loginButton = Button(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+            loginButton.backgroundColor = Color.blue
+            loginButton.title = "Login with Facebook"
+            view.layout(loginButton).centerHorizontally()
+                .bottom(50)
+                .left(40)
+                .right(40)
+            loginButton.addTarget(self, action: #selector(configureFacebook), for: .touchUpInside)
     }
-    */
-
 }
