@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Test_MusicVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Test_MusicVersionString[];
+FOUNDATION_EXPORT double Pods_MusicVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MusicVersionString[];
 

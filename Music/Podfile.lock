@@ -46,11 +46,11 @@ PODS:
     - Material/Core (= 2.6.3)
   - Material/Core (2.6.3)
   - Protobuf (3.3.0)
-  - Realm (2.8.0):
-    - Realm/Headers (= 2.8.0)
-  - Realm/Headers (2.8.0)
-  - RealmSwift (2.8.0):
-    - Realm (= 2.8.0)
+  - Realm (2.8.1):
+    - Realm/Headers (= 2.8.1)
+  - Realm/Headers (2.8.1)
+  - RealmSwift (2.8.1):
+    - Realm (= 2.8.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -75,10 +75,10 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
-  Realm: 929243ad2b618b3232e70658bedc61110e7563f1
-  RealmSwift: 5b7079b891f2833d1849294161ba3e092bbda3f6
+  Realm: 2627602ad6818451f0cb8c2a6e072f7f10a5f360
+  RealmSwift: 4764ca7657f2193c256fb032c0b123926f70dbcd
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 0e8a42acc0a340f234cf5b56e312dec84a2beeeb
+PODFILE CHECKSUM: fbefc4cdab2b89b3a52f9baa423ff5d050c7875b
 
 COCOAPODS: 1.2.1
