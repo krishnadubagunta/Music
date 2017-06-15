@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Material-com.cosmicmind.material.fonts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -45,6 +50,11 @@
 			<false/>
 		</dict>
 		<key>Pods-Test_Music.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Protobuf.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -67,11 +77,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>017C4A80C7ECDD9287E0504C62707F70</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>39AA3FC7447AC6B6A131668CFF9C01CD</key>
 		<dict>
 			<key>primary</key>
@@ -82,7 +87,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3D6A2C8990A782618116874ED430CE58</key>
+		<key>3B2DB2684C33AE8843A64458443637CF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,11 +107,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>636BFDFB336317C57AC6113CECDD39AA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
 		<dict>
 			<key>primary</key>
@@ -117,7 +117,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>978C02F0579850F936645BB8751603CD</key>
+		<key>908CA08A428EA19DDE6FC57F2CA7971A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B3124F67FC0DC77BEA4CCABEC1A40153</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B35F600FB990B706F50C0475DA7615A9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BF610967C40856AB889DFCC6FEBED8C8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C5B80060FE8C664DF08841000F41D515</key>
 		<dict>
 			<key>primary</key>
 			<true/>

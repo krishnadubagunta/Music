@@ -12,6 +12,7 @@ target 'Test_Music' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'SwiftyJSON'
+  pod 'Firebase/Messaging'
   
   post_install do |installer|
       installer.pods_project.targets.each do |target|

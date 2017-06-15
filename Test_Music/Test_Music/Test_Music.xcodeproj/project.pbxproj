@@ -16,6 +16,7 @@
 		6B299F831EEC4A0C006153F7 /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F821EEC4A0C006153F7 /* PlaylistCell.swift */; };
 		6B299F851EEC7F67006153F7 /* playListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F841EEC7F67006153F7 /* playListTableView.swift */; };
 		6B299F871EEC84A1006153F7 /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B299F861EEC84A1006153F7 /* SongsViewController.swift */; };
+		6B348C5C1EF3170300C5674D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B348C5B1EF3170300C5674D /* GoogleService-Info.plist */; };
 		6B67699E1EE9B4910075F136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67699D1EE9B4910075F136 /* AppDelegate.swift */; };
 		6B6769A01EE9B4910075F136 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B67699F1EE9B4910075F136 /* ViewController.swift */; };
 		6B6769A61EE9B4910075F136 /* Test_Music.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6B6769A41EE9B4910075F136 /* Test_Music.xcdatamodeld */; };
@@ -35,6 +36,8 @@
 		6B299F821EEC4A0C006153F7 /* PlaylistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
 		6B299F841EEC7F67006153F7 /* playListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playListTableView.swift; sourceTree = "<group>"; };
 		6B299F861EEC84A1006153F7 /* SongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
+		6B348C5A1EF316D900C5674D /* Test_Music.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = Test_Music.entitlements; sourceTree = "<group>"; };
+		6B348C5B1EF3170300C5674D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6B67699A1EE9B4910075F136 /* Test_Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_Music.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B67699D1EE9B4910075F136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B67699F1EE9B4910075F136 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		6B67699C1EE9B4910075F136 /* Test_Music */ = {
 			isa = PBXGroup;
 			children = (
+				6B348C5A1EF316D900C5674D /* Test_Music.entitlements */,
 				6B67699D1EE9B4910075F136 /* AppDelegate.swift */,
 				6B299F8B1EECAFAC006153F7 /* Controllers */,
 				6B299F8C1EECAFB9006153F7 /* Views */,
@@ -128,6 +132,7 @@
 				6B6769A71EE9B4910075F136 /* Assets.xcassets */,
 				6B6769A91EE9B4910075F136 /* LaunchScreen.storyboard */,
 				6B6769AC1EE9B4910075F136 /* Info.plist */,
+				6B348C5B1EF3170300C5674D /* GoogleService-Info.plist */,
 				6B6769A41EE9B4910075F136 /* Test_Music.xcdatamodeld */,
 			);
 			path = Test_Music;
@@ -187,6 +192,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = NE8AW735Y8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -215,6 +225,7 @@
 			files = (
 				6B6769AB1EE9B4910075F136 /* LaunchScreen.storyboard in Resources */,
 				6B6769A81EE9B4910075F136 /* Assets.xcassets in Resources */,
+				6B348C5C1EF3170300C5674D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,10 +414,11 @@
 			baseConfigurationReference = BF2D1DFF9207298B2463DFE7 /* Pods-Test_Music.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Test_Music/Test_Music.entitlements;
 				DEVELOPMENT_TEAM = NE8AW735Y8;
 				INFOPLIST_FILE = Test_Music/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.self.Test-Music";
+				PRODUCT_BUNDLE_IDENTIFIER = SaiKrishna.Music;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -417,10 +429,11 @@
 			baseConfigurationReference = C50AB6240882EDD5C670B0E5 /* Pods-Test_Music.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Test_Music/Test_Music.entitlements;
 				DEVELOPMENT_TEAM = NE8AW735Y8;
 				INFOPLIST_FILE = Test_Music/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.self.Test-Music";
+				PRODUCT_BUNDLE_IDENTIFIER = SaiKrishna.Music;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
