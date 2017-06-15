@@ -27,6 +27,8 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginManager = LoginManager()
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        preparePageView()
         prepareButton()
         // Do any additional setup after loading the view.
     }
@@ -41,14 +43,13 @@ class OnboardingViewController: UIViewController {
                 print(error)
                 break
             case .success(grantedPermissions: _, declinedPermissions:  _, token: _) :
-                let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: ["fields" : "id,name,birthday,picture,friends{name,picture}"], httpMethod: "GET")
+                let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: ["fields" : "id,name,birthday,picture,friends{id,name,picture,birthday}"], httpMethod: "GET")
                 graphRequest?.start(completionHandler: { (connection, resultConnection, error) in
                     connection?.cancel()
                     let json = JSON.init(resultConnection!)
                     self.imageString = try! Data.init(contentsOf: URL(string: json["picture"]["data"]["url"].string!)!).base64EncodedString()
                     self.friends = json["friends"]["data"].arrayObject
-                    print(self.imageString)
-                    print("\n \(self.friends!)")
+                    
                 })
                 break
             }
@@ -75,4 +76,9 @@ extension OnboardingViewController {
                 .right(40)
             loginButton.addTarget(self, action: #selector(configureFacebook), for: .touchUpInside)
     }
+    
+    fileprivate func preparePageView() {
+        
+    }
+    
 }
