@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6B6769991EE9B4910075F136"
-               BuildableName = "Test_Music.app"
-               BlueprintName = "Test_Music"
-               ReferencedContainer = "container:Test_Music.xcodeproj">
+               BuildableName = "Music.app"
+               BlueprintName = "Music"
+               ReferencedContainer = "container:Music.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B6769991EE9B4910075F136"
-            BuildableName = "Test_Music.app"
-            BlueprintName = "Test_Music"
-            ReferencedContainer = "container:Test_Music.xcodeproj">
+            BuildableName = "Music.app"
+            BlueprintName = "Music"
+            ReferencedContainer = "container:Music.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B6769991EE9B4910075F136"
-            BuildableName = "Test_Music.app"
-            BlueprintName = "Test_Music"
-            ReferencedContainer = "container:Test_Music.xcodeproj">
+            BuildableName = "Music.app"
+            BlueprintName = "Music"
+            ReferencedContainer = "container:Music.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B6769991EE9B4910075F136"
-            BuildableName = "Test_Music.app"
-            BlueprintName = "Test_Music"
-            ReferencedContainer = "container:Test_Music.xcodeproj">
+            BuildableName = "Music.app"
+            BlueprintName = "Music"
+            ReferencedContainer = "container:Music.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
