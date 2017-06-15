@@ -1,0 +1,34 @@
+{
+  "name": "music_app",
+  "version": "1.0.0",
+  "description": "A cloud based Music Application where you can create playlist,add songs,different usersessions",
+  "main": "hello.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongodb": "^2.2.28",
+    "pm2": "^2.5.0",
+    "bcryptjs" : "^2.1.0",
+    "ejs": "^2.3.3",
+    "express-jwt": "^3.0.1",
+    "express-session": "^1.11.3",
+    "jsonwebtoken": "^5.0.2",
+    "lodash": "^3.10.0",
+    "mongoskin": "^2.1.0",
+    "q": "^1.4.1",
+    "request": "^2.58.0",
+    "rootpath": "^0.1.2"   
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Music",
+    "Cloud"
+  ],
+  "author": "Kosh",
+  "license": "ISC"
+}
