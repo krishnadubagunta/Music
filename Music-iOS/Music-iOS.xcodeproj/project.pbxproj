@@ -13,7 +13,6 @@
 		6BC60E6E1EF358EC002EAB66 /* Music_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BC60E6C1EF358EC002EAB66 /* Music_iOS.xcdatamodeld */; };
 		6BC60E701EF358EC002EAB66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BC60E6F1EF358EC002EAB66 /* Assets.xcassets */; };
 		6BC60E731EF358EC002EAB66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC60E711EF358EC002EAB66 /* LaunchScreen.storyboard */; };
-		6BF5F1921EF5891E004A23BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BF5F1911EF5891E004A23BB /* GoogleService-Info.plist */; };
 		6BF5F1941EF58D1B004A23BB /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1931EF58D1B004A23BB /* AppNavigationController.swift */; };
 		6BF5F1961EF58D3F004A23BB /* AppStatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1951EF58D3F004A23BB /* AppStatusBarController.swift */; };
 		6BF5F1981EF58D51004A23BB /* ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1971EF58D51004A23BB /* ButtonLayout.swift */; };
@@ -26,6 +25,7 @@
 		6BF5F1A81EF58DBF004A23BB /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1A41EF58DBF004A23BB /* PlaylistCell.swift */; };
 		6BF5F1A91EF58DBF004A23BB /* playListTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1A51EF58DBF004A23BB /* playListTableView.swift */; };
 		6BF5F1AA1EF58DBF004A23BB /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1A61EF58DBF004A23BB /* SongsViewController.swift */; };
+		6BF5F1AC1EF59358004A23BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6BF5F1AB1EF59358004A23BB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +37,6 @@
 		6BC60E721EF358EC002EAB66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BC60E741EF358EC002EAB66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BF5F1901EF58754004A23BB /* Music-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Music-iOS.entitlements"; sourceTree = "<group>"; };
-		6BF5F1911EF5891E004A23BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6BF5F1931EF58D1B004A23BB /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		6BF5F1951EF58D3F004A23BB /* AppStatusBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStatusBarController.swift; sourceTree = "<group>"; };
 		6BF5F1971EF58D51004A23BB /* ButtonLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonLayout.swift; sourceTree = "<group>"; };
@@ -50,6 +49,7 @@
 		6BF5F1A41EF58DBF004A23BB /* PlaylistCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
 		6BF5F1A51EF58DBF004A23BB /* playListTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = playListTableView.swift; sourceTree = "<group>"; };
 		6BF5F1A61EF58DBF004A23BB /* SongsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
+		6BF5F1AB1EF59358004A23BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B9ED67626090EC4B9B437F84 /* Pods-Music-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Music-iOS/Pods-Music-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		CF594BDD1AABD328C6E9C1DA /* Pods_Music_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D94CE0484F516FC0FC6F79AF /* Pods-Music-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Music-iOS/Pods-Music-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -105,8 +105,8 @@
 				6BC60E691EF358EC002EAB66 /* Main.storyboard */,
 				6BC60E6F1EF358EC002EAB66 /* Assets.xcassets */,
 				6BC60E711EF358EC002EAB66 /* LaunchScreen.storyboard */,
+				6BF5F1AB1EF59358004A23BB /* GoogleService-Info.plist */,
 				6BC60E741EF358EC002EAB66 /* Info.plist */,
-				6BF5F1911EF5891E004A23BB /* GoogleService-Info.plist */,
 				6BC60E6C1EF358EC002EAB66 /* Music_iOS.xcdatamodeld */,
 			);
 			path = "Music-iOS";
@@ -198,9 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BC60E731EF358EC002EAB66 /* LaunchScreen.storyboard in Resources */,
+				6BF5F1AC1EF59358004A23BB /* GoogleService-Info.plist in Resources */,
 				6BC60E701EF358EC002EAB66 /* Assets.xcassets in Resources */,
 				6BC60E6B1EF358EC002EAB66 /* Main.storyboard in Resources */,
-				6BF5F1921EF5891E004A23BB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

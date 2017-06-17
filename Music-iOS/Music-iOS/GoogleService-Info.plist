@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>966409355214-k7nehgqecu2bgvh4ek5jue3cicjv0e2q.apps.googleusercontent.com</string>
+	<string>966409355214-e40detu8ae75vg0d0tt8kkoju1sh0qrn.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.966409355214-k7nehgqecu2bgvh4ek5jue3cicjv0e2q</string>
+	<string>com.googleusercontent.apps.966409355214-e40detu8ae75vg0d0tt8kkoju1sh0qrn</string>
 	<key>API_KEY</key>
 	<string>AIzaSyD2I6TuVK8e8waPi4bEuHEGvY2rl80e0GU</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>SaiKrishna.Music-iOS</string>
+	<string>com.SaiKrishna.Music-iOS</string>
 	<key>PROJECT_ID</key>
 	<string>music-78799</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:966409355214:ios:f80d60fdf7da5920</string>
+	<string>1:966409355214:ios:a7dcc2da08ca255f</string>
 	<key>DATABASE_URL</key>
 	<string>https://music-78799.firebaseio.com</string>
 </dict>

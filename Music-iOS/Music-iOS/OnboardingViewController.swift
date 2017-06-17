@@ -50,6 +50,9 @@ class OnboardingViewController: UIViewController {
                     self.imageString = try! Data.init(contentsOf: URL(string: json["picture"]["data"]["url"].string!)!).base64EncodedString()
                     self.friends = json["friends"]["data"].arrayObject
                     
+                    UIApplication.shared.keyWindow?.rootViewController = AppNavigationController(rootViewController: ViewController())
+                    self.navigationController?.popToRootViewController(animated: true)
+                    
                 })
                 break
             }

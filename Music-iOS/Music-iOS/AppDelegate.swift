@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         return true
     }
     
+    
     func applicationDidFinishLaunching(_ application: UIApplication) {
         configureFirebase(application: application)
     }
@@ -73,7 +74,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             application.registerUserNotificationSettings(settings)
         }
         application.registerForRemoteNotifications()
-        
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -122,6 +122,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     }
     
     
+    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         Messaging.messaging().appDidReceiveMessage(userInfo)
         if let messageID = userInfo[gcmMessageIDKey] {
@@ -148,6 +149,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
     }
+    
     // [END refresh_token]
     // [START ios_10_data_message]
     // Receive data messages on iOS 10+ directly from FCM (bypassing APNs) when the app is in the foreground.
