@@ -98,9 +98,7 @@
 				6BF5F1A41EF58DBF004A23BB /* PlaylistCell.swift */,
 				6BF5F1A51EF58DBF004A23BB /* playListTableView.swift */,
 				6BF5F1A61EF58DBF004A23BB /* SongsViewController.swift */,
-				6BF5F19B1EF58D6B004A23BB /* Playlist.swift */,
-				6BF5F19C1EF58D6B004A23BB /* Song.swift */,
-				6BF5F19D1EF58D6B004A23BB /* User.swift */,
+				6BF5F1AD1EF59994004A23BB /* Model */,
 				6BF5F1991EF58D5B004A23BB /* UIColor.swift */,
 				6BC60E691EF358EC002EAB66 /* Main.storyboard */,
 				6BC60E6F1EF358EC002EAB66 /* Assets.xcassets */,
@@ -110,6 +108,16 @@
 				6BC60E6C1EF358EC002EAB66 /* Music_iOS.xcdatamodeld */,
 			);
 			path = "Music-iOS";
+			sourceTree = "<group>";
+		};
+		6BF5F1AD1EF59994004A23BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6BF5F19B1EF58D6B004A23BB /* Playlist.swift */,
+				6BF5F19C1EF58D6B004A23BB /* Song.swift */,
+				6BF5F19D1EF58D6B004A23BB /* User.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		B050590703EF0D56300F335A /* Pods */ = {
