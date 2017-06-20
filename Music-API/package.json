@@ -1,0 +1,35 @@
+{
+  "name": "SampleAPI",
+  "version": "1.0.1",
+  "author": "Krishna Dubagunta <dubagunta.saikrishna@outlook.com>",
+  "description": "Userpool API for MUSIC app",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "generate-key": "0.0.6",
+    "jwt-simple": "^0.5.1",
+    "mongoose": "^4.10.7",
+    "morgan": "^1.8.2",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krishnadubagunta/sampleAPIProject/"
+  },
+  "engines": {
+    "node": "6.10.2"
+  },
+  "scripts" : {
+    "start" : "node server.js",
+    "postdeploy" : "echo scripts running"
+  },
+  "keywords": [
+    "RESTAPI",
+    "sample",
+    "userpool"
+  ],
+  "subdomain": "resources",
+  "license": "MIT"
+}
