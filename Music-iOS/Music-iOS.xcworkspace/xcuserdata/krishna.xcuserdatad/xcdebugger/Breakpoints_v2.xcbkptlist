@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Music-iOS/AppDelegate.swift"
-            timestampString = "519770484.132369"
+            timestampString = "519793352.603955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "AppDelegate"
             landmarkType = "3">
          </BreakpointContent>

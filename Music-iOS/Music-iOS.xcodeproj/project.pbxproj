@@ -8,11 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1974DD656744DEBA7C29E041 /* Pods_Music_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF594BDD1AABD328C6E9C1DA /* Pods_Music_iOS.framework */; };
+		6B62BB461EFB68BF00C4166C /* AppTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62BB451EFB68BF00C4166C /* AppTabBarController.swift */; };
+		6B62BB481EFB6A3A00C4166C /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62BB471EFB6A3A00C4166C /* MessageViewController.swift */; };
+		6B62BB4A1EFB6A4900C4166C /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62BB491EFB6A4900C4166C /* TrendingViewController.swift */; };
+		6B62BB4C1EFB6A5A00C4166C /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B62BB4B1EFB6A5A00C4166C /* SearchViewController.swift */; };
 		6BC60E661EF358EC002EAB66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC60E651EF358EC002EAB66 /* AppDelegate.swift */; };
 		6BC60E6B1EF358EC002EAB66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC60E691EF358EC002EAB66 /* Main.storyboard */; };
 		6BC60E6E1EF358EC002EAB66 /* Music_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BC60E6C1EF358EC002EAB66 /* Music_iOS.xcdatamodeld */; };
 		6BC60E731EF358EC002EAB66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC60E711EF358EC002EAB66 /* LaunchScreen.storyboard */; };
 		6BC6A2BB1EFB1445002C76DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BC6A2BA1EFB1445002C76DA /* Assets.xcassets */; };
+		6BC6A2BD1EFB48AF002C76DA /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC6A2BC1EFB48AF002C76DA /* AccountController.swift */; };
 		6BF5F1941EF58D1B004A23BB /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1931EF58D1B004A23BB /* AppNavigationController.swift */; };
 		6BF5F1961EF58D3F004A23BB /* AppStatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1951EF58D3F004A23BB /* AppStatusBarController.swift */; };
 		6BF5F1981EF58D51004A23BB /* ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1971EF58D51004A23BB /* ButtonLayout.swift */; };
@@ -29,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B62BB451EFB68BF00C4166C /* AppTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabBarController.swift; sourceTree = "<group>"; };
+		6B62BB471EFB6A3A00C4166C /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		6B62BB491EFB6A4900C4166C /* TrendingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrendingViewController.swift; sourceTree = "<group>"; };
+		6B62BB4B1EFB6A5A00C4166C /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6BC60E621EF358EC002EAB66 /* Music-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC60E651EF358EC002EAB66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BC60E6A1EF358EC002EAB66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,6 +45,7 @@
 		6BC60E721EF358EC002EAB66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BC60E741EF358EC002EAB66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BC6A2BA1EFB1445002C76DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6BC6A2BC1EFB48AF002C76DA /* AccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		6BF5F1901EF58754004A23BB /* Music-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Music-iOS.entitlements"; sourceTree = "<group>"; };
 		6BF5F1931EF58D1B004A23BB /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		6BF5F1951EF58D3F004A23BB /* AppStatusBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStatusBarController.swift; sourceTree = "<group>"; };
@@ -92,9 +102,14 @@
 				6BC60E651EF358EC002EAB66 /* AppDelegate.swift */,
 				6BF5F1931EF58D1B004A23BB /* AppNavigationController.swift */,
 				6BF5F1951EF58D3F004A23BB /* AppStatusBarController.swift */,
+				6B62BB451EFB68BF00C4166C /* AppTabBarController.swift */,
 				6BF5F1971EF58D51004A23BB /* ButtonLayout.swift */,
 				6BC6A2BA1EFB1445002C76DA /* Assets.xcassets */,
 				6BF5F1A11EF58D91004A23BB /* ViewController.swift */,
+				6BC6A2BC1EFB48AF002C76DA /* AccountController.swift */,
+				6B62BB471EFB6A3A00C4166C /* MessageViewController.swift */,
+				6B62BB4B1EFB6A5A00C4166C /* SearchViewController.swift */,
+				6B62BB491EFB6A4900C4166C /* TrendingViewController.swift */,
 				6BF5F1A31EF58DBF004A23BB /* OnboardingViewController.swift */,
 				6BF5F1A41EF58DBF004A23BB /* PlaylistCell.swift */,
 				6BF5F1A51EF58DBF004A23BB /* playListTableView.swift */,
@@ -271,16 +286,21 @@
 				6BF5F19F1EF58D6B004A23BB /* Song.swift in Sources */,
 				6BF5F1961EF58D3F004A23BB /* AppStatusBarController.swift in Sources */,
 				6BF5F19A1EF58D5B004A23BB /* UIColor.swift in Sources */,
+				6B62BB4C1EFB6A5A00C4166C /* SearchViewController.swift in Sources */,
 				6BC60E6E1EF358EC002EAB66 /* Music_iOS.xcdatamodeld in Sources */,
+				6B62BB461EFB68BF00C4166C /* AppTabBarController.swift in Sources */,
 				6BF5F19E1EF58D6B004A23BB /* Playlist.swift in Sources */,
+				6BC6A2BD1EFB48AF002C76DA /* AccountController.swift in Sources */,
 				6BF5F1941EF58D1B004A23BB /* AppNavigationController.swift in Sources */,
 				6BF5F1A91EF58DBF004A23BB /* playListTableView.swift in Sources */,
 				6BF5F1981EF58D51004A23BB /* ButtonLayout.swift in Sources */,
 				6BF5F1A01EF58D6B004A23BB /* User.swift in Sources */,
 				6BF5F1A71EF58DBF004A23BB /* OnboardingViewController.swift in Sources */,
+				6B62BB481EFB6A3A00C4166C /* MessageViewController.swift in Sources */,
 				6BC60E661EF358EC002EAB66 /* AppDelegate.swift in Sources */,
 				6BF5F1A81EF58DBF004A23BB /* PlaylistCell.swift in Sources */,
 				6BF5F1AA1EF58DBF004A23BB /* SongsViewController.swift in Sources */,
+				6B62BB4A1EFB6A4900C4166C /* TrendingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

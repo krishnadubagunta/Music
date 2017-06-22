@@ -27,7 +27,6 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginManager = LoginManager()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         preparePageView()
         prepareButton()
         // Do any additional setup after loading the view.
@@ -50,7 +49,11 @@ class OnboardingViewController: UIViewController {
                     self.imageString = try! Data.init(contentsOf: URL(string: json["picture"]["data"]["url"].string!)!).base64EncodedString()
                     self.friends = json["friends"]["data"].arrayObject
                     
-                    UIApplication.shared.keyWindow?.rootViewController = AppNavigationController(rootViewController: ViewController())
+                    
+                    let tabs = AppTabBarController(viewControllers: [MessageViewController(),TrendingViewController(),ViewController(),SearchViewController(),AccountController()], selectedIndex: 2)
+                    let root = AppNavigationController(rootViewController: tabs)
+                    UIApplication.shared.keyWindow?.rootViewController = root
+
                     self.navigationController?.popToRootViewController(animated: true)
                     
                 })
@@ -70,7 +73,7 @@ class OnboardingViewController: UIViewController {
 extension OnboardingViewController {
     
     fileprivate func prepareButton() {
-            loginButton = Button(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+            loginButton = Button(image: #imageLiteral(resourceName: "facebookImage"))
             loginButton.backgroundColor = Color.blue
             loginButton.title = "Login with Facebook"
             view.layout(loginButton).centerHorizontally()

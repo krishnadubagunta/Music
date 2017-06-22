@@ -24,11 +24,19 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
     static var notificationToken : NotificationToken?
     static var realm : Realm!
     
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        preparePageTabBarItem()
+    }
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        preparePageTabBarItem()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareStarButton()
-        prepareMenuButton()
-        prepareNavigation()
         self.view.backgroundColor = Color.white
     }
     
@@ -47,32 +55,10 @@ class ViewController: UIViewController, MPMediaPickerControllerDelegate{
 }
 
 extension ViewController {
-    
-    fileprivate func prepareNavigation() {
-        navigationItem.title = "Playlists"
-        navigationItem.titleLabel.textColor = Color.blue.base
-        navigationItem.leftViews = [menuButton]
-        navigationItem.rightViews = [starButton]
+    fileprivate func preparePageTabBarItem(){
+        pageTabBarItem.image = #imageLiteral(resourceName: "audio_wave")
+        pageTabBarItem.depthPreset = .depth4
     }
-    
-    fileprivate func prepareStarButton() {
-        starButton = IconButton(image: Icon.cm.add)
-        starButton.tintColor = Color.blue.base
-    }
-    
-    fileprivate func prepareMenuButton() {
-        menuButton = IconButton(image: Icon.cm.menu)
-//        menuButton.addTarget(self, action: #selector(handleMenuButton), for: .touchUpInside)
-    }
-    
 }
 
-extension ViewController : TabBarDelegate {
-    func tabBar(tabBar: TabBar, willSelect button: UIButton) {
-        print("will select")
-    }
-    
-    func tabBar(tabBar: TabBar, didSelect button: UIButton) {
-        print("did select")
-    }
-}
+
