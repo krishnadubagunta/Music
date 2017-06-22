@@ -43,7 +43,7 @@ class OnboardingViewController: UIViewController {
                 print(error)
                 break
             case .success(grantedPermissions: _, declinedPermissions:  _, token: _) :
-                let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: ["fields" : "id,name,birthday,picture,friends{id,name,picture,birthday}"], httpMethod: "GET")
+                let graphRequest = FBSDKGraphRequest.init(graphPath: "/me", parameters: ["fields" : "id,name,birthday,gender,picture,friends{id,name,picture,birthday}"], httpMethod: "GET")
                 graphRequest?.start(completionHandler: { (_, resultConnection, _) in
                     
                     let json = JSON.init(resultConnection!)

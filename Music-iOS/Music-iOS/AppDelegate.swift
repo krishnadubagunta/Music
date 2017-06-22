@@ -31,14 +31,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
         Messaging.messaging().shouldEstablishDirectChannel = true
-        print(Messaging.messaging().fcmToken!)
         window = UIWindow(frame: Screen.bounds)
         if (FBSDKAccessToken.current() == nil) {
             window!.rootViewController = AppNavigationController(rootViewController: OnboardingViewController())
             window?.makeKeyAndVisible()
             return true
         }
-        window!.rootViewController = AppNavigationController(rootViewController: ViewController())
+        let root = AppNavigationController(rootViewController: ViewController())
+        window!.rootViewController = root
         window?.makeKeyAndVisible()
         return true
     }
@@ -84,17 +84,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        ViewController.notificationToken?.stop()
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        ViewController.notificationToken = ViewController.realm.addNotificationBlock({ (notification, realm) in
-            if let controller = application.keyWindow?.rootViewController?.presentedViewController as? ViewController {
-                controller.reloadObjects()
-                //                controller.tableView.reloadData()
-            }
-        })
     }
     
     public func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -106,19 +99,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        ViewController.notificationToken = ViewController.realm.addNotificationBlock({ (notification, realm) in
-            if let controller = application.keyWindow?.rootViewController?.presentedViewController as? ViewController {
-                controller.reloadObjects()
-                //                controller.tableView.reloadData()
-            }
-        })
+
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         //        self.saveContext()
-        ViewController.notificationToken?.stop()
+    
     }
     
     

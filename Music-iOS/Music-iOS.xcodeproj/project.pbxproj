@@ -11,8 +11,8 @@
 		6BC60E661EF358EC002EAB66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC60E651EF358EC002EAB66 /* AppDelegate.swift */; };
 		6BC60E6B1EF358EC002EAB66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC60E691EF358EC002EAB66 /* Main.storyboard */; };
 		6BC60E6E1EF358EC002EAB66 /* Music_iOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6BC60E6C1EF358EC002EAB66 /* Music_iOS.xcdatamodeld */; };
-		6BC60E701EF358EC002EAB66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BC60E6F1EF358EC002EAB66 /* Assets.xcassets */; };
 		6BC60E731EF358EC002EAB66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BC60E711EF358EC002EAB66 /* LaunchScreen.storyboard */; };
+		6BC6A2BB1EFB1445002C76DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BC6A2BA1EFB1445002C76DA /* Assets.xcassets */; };
 		6BF5F1941EF58D1B004A23BB /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1931EF58D1B004A23BB /* AppNavigationController.swift */; };
 		6BF5F1961EF58D3F004A23BB /* AppStatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1951EF58D3F004A23BB /* AppStatusBarController.swift */; };
 		6BF5F1981EF58D51004A23BB /* ButtonLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BF5F1971EF58D51004A23BB /* ButtonLayout.swift */; };
@@ -33,9 +33,9 @@
 		6BC60E651EF358EC002EAB66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BC60E6A1EF358EC002EAB66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6BC60E6D1EF358EC002EAB66 /* Music_iOS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Music_iOS.xcdatamodel; sourceTree = "<group>"; };
-		6BC60E6F1EF358EC002EAB66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BC60E721EF358EC002EAB66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BC60E741EF358EC002EAB66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6BC6A2BA1EFB1445002C76DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BF5F1901EF58754004A23BB /* Music-iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Music-iOS.entitlements"; sourceTree = "<group>"; };
 		6BF5F1931EF58D1B004A23BB /* AppNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		6BF5F1951EF58D3F004A23BB /* AppStatusBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStatusBarController.swift; sourceTree = "<group>"; };
@@ -93,6 +93,7 @@
 				6BF5F1931EF58D1B004A23BB /* AppNavigationController.swift */,
 				6BF5F1951EF58D3F004A23BB /* AppStatusBarController.swift */,
 				6BF5F1971EF58D51004A23BB /* ButtonLayout.swift */,
+				6BC6A2BA1EFB1445002C76DA /* Assets.xcassets */,
 				6BF5F1A11EF58D91004A23BB /* ViewController.swift */,
 				6BF5F1A31EF58DBF004A23BB /* OnboardingViewController.swift */,
 				6BF5F1A41EF58DBF004A23BB /* PlaylistCell.swift */,
@@ -101,7 +102,6 @@
 				6BF5F1AD1EF59994004A23BB /* Model */,
 				6BF5F1991EF58D5B004A23BB /* UIColor.swift */,
 				6BC60E691EF358EC002EAB66 /* Main.storyboard */,
-				6BC60E6F1EF358EC002EAB66 /* Assets.xcassets */,
 				6BC60E711EF358EC002EAB66 /* LaunchScreen.storyboard */,
 				6BF5F1AB1EF59358004A23BB /* GoogleService-Info.plist */,
 				6BC60E741EF358EC002EAB66 /* Info.plist */,
@@ -207,7 +207,7 @@
 			files = (
 				6BC60E731EF358EC002EAB66 /* LaunchScreen.storyboard in Resources */,
 				6BF5F1AC1EF59358004A23BB /* GoogleService-Info.plist in Resources */,
-				6BC60E701EF358EC002EAB66 /* Assets.xcassets in Resources */,
+				6BC6A2BB1EFB1445002C76DA /* Assets.xcassets in Resources */,
 				6BC60E6B1EF358EC002EAB66 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

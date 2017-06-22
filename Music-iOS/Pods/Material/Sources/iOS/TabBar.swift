@@ -117,11 +117,12 @@ open class TabBar: Bar {
             }
 			
             centerViews = buttons as [UIView]
-            
 			layoutSubviews()
 		}
 	}
     
+    
+
     /// A boolean to animate the line when touched.
     @IBInspectable
     open var isLineAnimated = true {
@@ -288,7 +289,7 @@ extension TabBar {
         
         selected = button
         isAnimating = true
-        
+        selected?.tintColor = tintColor
         UIView.animate(withDuration: 0.25, animations: { [weak self, button = button] in
             guard let s = self else {
                 return
