@@ -11,8 +11,8 @@ import Material
 
 class MessageViewController: UIViewController {
     
-    fileprivate var menuButton: IconButton!
-    fileprivate var starButton: IconButton!
+    fileprivate var newMessageButton: IconButton!
+    fileprivate var trashButton: IconButton!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -60,17 +60,17 @@ extension MessageViewController {
     fileprivate func prepareNavigation() {
         navigationItem.title = "Conversations"
         navigationItem.titleLabel.textColor = Color.blue.base
-        navigationItem.leftViews = [menuButton]
-        navigationItem.rightViews = [starButton]
+        navigationItem.rightViews = [newMessageButton]
+        navigationItem.leftViews = [trashButton]
     }
     
     fileprivate func prepareStarButton() {
-        starButton = IconButton(image: Icon.cm.add)
-        starButton.tintColor = Color.blue.base
+        trashButton = IconButton(image: #imageLiteral(resourceName: "trash"))
+        trashButton.image = #imageLiteral(resourceName: "trash").tint(with: Color.blue.base)
     }
     
     fileprivate func prepareMenuButton() {
-        menuButton = IconButton(image: Icon.cm.menu)
+        newMessageButton = IconButton(image: Icon.cm.pen)
         //        menuButton.addTarget(self, action: #selector(handleMenuButton), for: .touchUpInside)
     }
 

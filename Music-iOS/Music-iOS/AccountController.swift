@@ -8,6 +8,7 @@
 
 import UIKit
 import Material
+import FBSDKLoginKit
 
 class AccountController: UIViewController {
 
@@ -20,7 +21,7 @@ class AccountController: UIViewController {
         prepareMenuButton()
         prepareStarButton()
         prepareNavigation()
-        preparePageTabBarItem()
+
     }
     
     init() {
@@ -28,7 +29,6 @@ class AccountController: UIViewController {
         prepareMenuButton()
         prepareStarButton()
         prepareNavigation()
-        preparePageTabBarItem()
     }
     
     override func viewDidLoad() {
@@ -41,6 +41,14 @@ class AccountController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @objc func logoutFacebook() {
+        let loginManager = FBSDKLoginManager.init()
+        loginManager.logOut()
+        UIApplication.shared.keyWindow?.rootViewController = AppNavigationController(rootViewController: OnboardingViewController())
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     
 
     /*
@@ -59,20 +67,18 @@ extension AccountController {
     
     
     fileprivate func prepareLogout() {
-        fbLogoutButton = Button(image: #imageLiteral(resourceName: "logoutFB"))
+        fbLogoutButton = RaisedButton(title: "Logout on Facebook", titleColor: Color.white)
+        fbLogoutButton.backgroundColor = Color.blue.darken4
+        fbLogoutButton.depthPreset = .depth4
+        fbLogoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightThin)
+        fbLogoutButton.addTarget(self, action: #selector(logoutFacebook), for: .touchUpInside)
         view.layout(fbLogoutButton).centerHorizontally()
-            .bottom(40)
             .left(40)
             .right(40)
-        .height(50)
-        fbLogoutButton.imageView?.contentMode = .scaleAspectFill
-        fbLogoutButton.pulseAnimation = .centerWithBacking
+            .height(40)
+            .bottom(100)
     }
     
-    fileprivate func preparePageTabBarItem() {
-        pageTabBarItem.image = #imageLiteral(resourceName: "female")
-        pageTabBarItem.depthPreset = .depth4
-    }
     
     fileprivate func prepareNavigation() {
         navigationItem.title = "Account"
@@ -83,7 +89,6 @@ extension AccountController {
     
     fileprivate func prepareStarButton() {
         starButton = IconButton(image: Icon.cm.add)
-        starButton.tintColor = Color.blue.base
     }
     
     fileprivate func prepareMenuButton() {

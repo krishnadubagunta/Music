@@ -75,7 +75,7 @@ extension SearchViewController {
 
     
     fileprivate func preparePageTabBarItem() {
-        pageTabBarItem.image = #imageLiteral(resourceName: "search")
+        pageTabBarItem.image = #imageLiteral(resourceName: "search").tint(with: Color.blue.base)
         pageTabBarItem.depthPreset = .depth4
     }
 }

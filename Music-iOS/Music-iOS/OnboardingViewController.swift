@@ -10,12 +10,16 @@ import UIKit
 import Material
 import FacebookLogin
 import FBSDKCoreKit
+import FBSDKLoginKit
 import SwiftyJSON
 
 class OnboardingViewController: UIViewController {
     
+    var logo : UIImageView!
     var loginManager : LoginManager!
     var loginButton : Button!
+    var login : IconButton!
+    var signupButton : Button!
     var imageString = ""
     var name = ""
     var id = ""
@@ -27,6 +31,7 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loginManager = LoginManager()
+        prepareLogo()
         preparePageView()
         prepareButton()
         // Do any additional setup after loading the view.
@@ -50,9 +55,9 @@ class OnboardingViewController: UIViewController {
                     self.friends = json["friends"]["data"].arrayObject
                     
                     
-                    let tabs = AppTabBarController(viewControllers: [MessageViewController(),TrendingViewController(),ViewController(),SearchViewController(),AccountController()], selectedIndex: 2)
-                    let root = AppNavigationController(rootViewController: tabs)
-                    UIApplication.shared.keyWindow?.rootViewController = root
+                    let tabs = AppTabBarController(viewControllers: [AppNavigationController(rootViewController: MessageViewController()),TrendingViewController(),ViewController(),AppNavigationController(rootViewController: SearchViewController()),AppNavigationController(rootViewController: AccountController())])
+
+                    UIApplication.shared.keyWindow?.rootViewController = tabs
 
                     self.navigationController?.popToRootViewController(animated: true)
                     
@@ -72,16 +77,44 @@ class OnboardingViewController: UIViewController {
 
 extension OnboardingViewController {
     
+    fileprivate func prepareLogo() {
+        logo = UIImageView(image: #imageLiteral(resourceName: "logo3"))
+        logo.shapePreset = .circle
+        logo.depthPreset = .depth4
+        view.layout(logo)
+            .centerHorizontally()
+            .top(100)
+    }
+    
     fileprivate func prepareButton() {
-            loginButton = Button(image: #imageLiteral(resourceName: "facebookImage"))
-            loginButton.backgroundColor = Color.blue
-            loginButton.title = "Login with Facebook"
-            view.layout(loginButton).centerHorizontally()
-                .bottom(50)
+        loginButton = RaisedButton(title: "Sign up with Facebook", titleColor: Color.white)
+        loginButton.backgroundColor = Color.blue.darken4
+        loginButton.depthPreset = .depth4
+        loginButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightThin)
+        loginButton.addTarget(self, action: #selector(configureFacebook), for: .touchUpInside)
+        view.layout(loginButton).centerHorizontally()
                 .left(40)
                 .right(40)
-            loginButton.addTarget(self, action: #selector(configureFacebook), for: .touchUpInside)
+                .height(40)
+                .bottom(100)
+//
+        signupButton = RaisedButton(title: "Sign up with Email", titleColor: Color.blue.darken4)
+        signupButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightThin)
+        signupButton.depthPreset = .depth4
+        view.layout(signupButton).centerHorizontally()
+                .left(40)
+                .right(40)
+                .height(40)
+                .bottom(50)
+        
+        login = IconButton(title: "LOGIN", titleColor: Color.blue.darken4)
+        login.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightMedium)
+        login.pulseAnimation = .none
+        navigationItem.rightViews = [login]
+        
     }
+    
+    
     
     fileprivate func preparePageView() {
         
