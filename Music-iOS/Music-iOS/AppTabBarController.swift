@@ -16,9 +16,14 @@ class AppTabBarController: PageTabBarController {
     
     open override func prepare() {
         super.prepare()
+        
         delegate = self
-//        prepareButtons()
+
         prepareTabbar()
+        
+        Motion.delay(0) { [weak self] in
+            self?.selectedIndex = 0
+        }
     }
     
     override func viewDidLoad() {

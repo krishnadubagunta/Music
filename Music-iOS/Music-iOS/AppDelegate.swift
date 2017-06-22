@@ -38,9 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
             return true
         }
         
-        let tabs = AppTabBarController(viewControllers: [AppNavigationController(rootViewController: MessageViewController()),TrendingViewController(),ViewController(),AppNavigationController(rootViewController: SearchViewController()),AppNavigationController(rootViewController: AccountController())], selectedIndex: 2)
-        let root = AppNavigationController(rootViewController: tabs)
-        window!.rootViewController = root
+        let tabs = AppTabBarController(viewControllers: [AppNavigationController(rootViewController: MessageViewController()),TrendingViewController(),ViewController(),AppNavigationController(rootViewController: SearchViewController()),AppNavigationController(rootViewController: AccountController())])
+        window!.rootViewController = tabs
         window?.makeKeyAndVisible()
         return true
     }

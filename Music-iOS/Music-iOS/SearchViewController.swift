@@ -57,10 +57,10 @@ class SearchViewController: UIViewController {
 extension SearchViewController {
     
     fileprivate func prepareNavigation() {
-        self.toolbarController?.navigationItem.title = "Search"
-        self.toolbarController?.navigationItem.titleLabel.textColor = Color.blue.base
-        self.toolbarController?.navigationItem.leftViews = [menuButton]
-        self.toolbarController?.navigationItem.rightViews = [starButton]
+        navigationItem.title = "Search"
+        navigationItem.titleLabel.textColor = Color.blue.base
+        navigationItem.leftViews = [menuButton]
+        navigationItem.rightViews = [starButton]
     }
     
     fileprivate func prepareStarButton() {
