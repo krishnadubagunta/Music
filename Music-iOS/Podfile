@@ -10,6 +10,8 @@ target 'Music-iOS' do
   pod 'FacebookLogin'
   pod 'SwiftyJSON'
   pod 'Firebase/Messaging'
+  pod 'TRON'
+  pod 'JSONWebToken'
   
   post_install do |installer|
       installer.pods_project.targets.each do |target|

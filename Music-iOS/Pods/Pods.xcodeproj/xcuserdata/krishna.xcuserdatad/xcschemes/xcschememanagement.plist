@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CryptoSwift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -30,6 +40,11 @@
 			<false/>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSONWebToken.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -74,19 +89,14 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>TRON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>181D2C1282B74CC949A8530D76212DDB</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>1BC03C2D72D7F2F42FF2461C01493E4E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>39AA3FC7447AC6B6A131668CFF9C01CD</key>
 		<dict>
 			<key>primary</key>
@@ -112,7 +122,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>616AE58C3F6B2C335142EC7BA48E99B1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6BB1C1403B2419F911818DA8413FDA07</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>7335E9C9689F3B8A16F063A884748533</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7B5F585A01DBF54AC5490AD435A564D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,12 +152,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A6573D139D35310F1B0E17430B9E7760</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B7B2D894DC77B2DBA2E9FF8C49E5D233</key>
+		<key>986FFD20A582FBB8E396F3F09E818620</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,12 +162,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>D0A176BE12563A59537F2596BA3D94A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC3AAE346B9694447F2BB5D5D4A55E5A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>DDBCFDE490CDFDABF6F16A26F346932D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB614BB434C729EBD597E6174F6D52E2</key>
+		<key>EA10659E79BE64E38684D20528998020</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F47BD373B1DFF8909BD286267946BD54</key>
 		<dict>
 			<key>primary</key>
 			<true/>

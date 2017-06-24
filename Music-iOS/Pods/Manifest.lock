@@ -1,10 +1,12 @@
 PODS:
+  - Alamofire (4.4.0)
   - Bolts (1.8.4):
     - Bolts/AppLinks (= 1.8.4)
     - Bolts/Tasks (= 1.8.4)
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - CryptoSwift (0.6.9)
   - FacebookCore (0.2.0):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.15)
@@ -42,6 +44,8 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - JSONWebToken (2.1.1):
+    - CryptoSwift (~> 0.6.1)
   - Material (2.6.3):
     - Material/Core (= 2.6.3)
   - Material/Core (2.6.3)
@@ -52,17 +56,30 @@ PODS:
   - RealmSwift (2.8.1):
     - Realm (= 2.8.1)
   - SwiftyJSON (3.1.4)
+  - TRON (3.0.3):
+    - Alamofire (~> 4.1)
+    - TRON/SwiftyJSON (= 3.0.3)
+  - TRON/Core (3.0.3):
+    - Alamofire (~> 4.1)
+  - TRON/SwiftyJSON (3.0.3):
+    - Alamofire (~> 4.1)
+    - SwiftyJSON (~> 3.1)
+    - TRON/Core
 
 DEPENDENCIES:
   - FacebookCore
   - FacebookLogin
   - Firebase/Messaging
+  - JSONWebToken
   - Material (~> 2.0)
   - RealmSwift
   - SwiftyJSON
+  - TRON
 
 SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  CryptoSwift: a22f6ba238e9ce4d26ee7bf45b9ed82e7122d4a0
   FacebookCore: 2cb3f0fbff218e9d3119cec84bae983b232412de
   FacebookLogin: c9d606504735780a9e3002465a615512e0a691a5
   FBSDKCoreKit: d7829f5a69901cd7296105328e4c3c3fc7da6518
@@ -73,12 +90,14 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 9fbf536668f4d3f0880e7438456dabd1376e294b
   FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  JSONWebToken: 21a2c3ea5f034882e90f28c656ffce0396155907
   Material: af607a7ec0e9978ef85cf189a3d8ceeeb650400f
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   Realm: 2627602ad6818451f0cb8c2a6e072f7f10a5f360
   RealmSwift: 4764ca7657f2193c256fb032c0b123926f70dbcd
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  TRON: dd43f2d37b70ae245e5fef4a52f1ab8a5eaac3a5
 
-PODFILE CHECKSUM: 700dbe67608f830962da3f8f138e09dc38cfd32c
+PODFILE CHECKSUM: df586091ec8d69dd75a3c798f82dc925a3ff0423
 
 COCOAPODS: 1.2.1
