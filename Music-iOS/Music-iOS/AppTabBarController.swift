@@ -41,13 +41,11 @@ class AppTabBarController: PageTabBarController {
 extension AppTabBarController {
     
 fileprivate func prepareTabbar() {
-    
     pageTabBar.backgroundColor = Color.white
     pageTabBar.dividerColor = nil
     pageTabBar.lineAlignment = .bottom
     pageTabBar.lineColor = Color.blue.base
     pageTabBar.interimSpacePreset = .interimSpace9
-    
 }
     
 }

@@ -15,6 +15,7 @@ class AccountController: UIViewController {
     fileprivate var menuButton: IconButton!
     fileprivate var starButton: IconButton!
     var fbLogoutButton : Button!
+    var logoutButton : Button!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -42,14 +43,21 @@ class AccountController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @objc func logoutFacebook() {
-        let loginManager = FBSDKLoginManager.init()
-        loginManager.logOut()
+    func prepareTransition() {
         UIApplication.shared.keyWindow?.rootViewController = AppNavigationController(rootViewController: OnboardingViewController())
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    @objc func logoutFacebook() {
+        let loginManager = FBSDKLoginManager.init()
+        loginManager.logOut()
+        self.prepareTransition()
+    }
     
+    @objc func logout() {
+        UserDefaults.standard.removeObject(forKey: "token")
+        self.prepareTransition()
+    }
 
     /*
     // MARK: - Navigation
@@ -77,6 +85,19 @@ extension AccountController {
             .right(40)
             .height(40)
             .bottom(100)
+        
+        logoutButton = RaisedButton(title: "Logout", titleColor: Color.blue.darken4)
+        logoutButton.backgroundColor = Color.white
+        logoutButton.depthPreset = .depth4
+        logoutButton.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: UIFontWeightThin)
+        logoutButton.addTarget(self, action: #selector(logoutFacebook), for: .touchUpInside)
+        view.layout(logoutButton).centerHorizontally()
+            .left(40)
+            .right(40)
+            .height(40)
+            .bottom(40)
+        
+        
     }
     
     

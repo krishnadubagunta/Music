@@ -32,18 +32,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         Messaging.messaging().delegate = self
         Messaging.messaging().shouldEstablishDirectChannel = true
         window = UIWindow(frame: Screen.bounds)
-        if (FBSDKAccessToken.current() == nil) {
-            window!.rootViewController = AppNavigationController(rootViewController: OnboardingViewController())
+        let userToken = UserDefaults.standard.value(forKey: "token") as? String
+        if (FBSDKAccessToken.current() != nil || (userToken!) != "") {
+            let tabs = AppTabBarController(viewControllers: [AppNavigationController(rootViewController: MessageViewController()),TrendingViewController(),ViewController(),AppNavigationController(rootViewController: SearchViewController()),AppNavigationController(rootViewController: AccountController())])
+            window!.rootViewController = tabs
             window?.makeKeyAndVisible()
             return true
         }
         
-        let tabs = AppTabBarController(viewControllers: [AppNavigationController(rootViewController: MessageViewController()),TrendingViewController(),ViewController(),AppNavigationController(rootViewController: SearchViewController()),AppNavigationController(rootViewController: AccountController())])
-        window!.rootViewController = tabs
+        window!.rootViewController = AppNavigationController(rootViewController: OnboardingViewController())
         window?.makeKeyAndVisible()
         return true
     }
-    
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         configureFirebase(application: application)

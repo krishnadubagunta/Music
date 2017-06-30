@@ -29,6 +29,7 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppleDeveloperToken().printBytes()
         self.view.backgroundColor = Color.white
         prepareLogo()
         preparePageView()

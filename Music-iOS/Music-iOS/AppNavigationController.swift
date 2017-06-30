@@ -19,6 +19,7 @@ class AppNavigationController: NavigationController {
         v.dividerColor = Color.clear
         v.depthPreset = .none
         v.backgroundColor = Color.white
+        
     }
     
     override init(rootViewController: UIViewController) {

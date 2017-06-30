@@ -7,17 +7,33 @@
 //
 
 import Foundation
+import TRON
+import SwiftyJSON
 import RealmSwift
 
-class User : Object {
+class User : Object, JSONDecodable {
     dynamic var id = ""
-    dynamic var name = ""
     dynamic var picture = ""
+    dynamic var firstName = ""
+    dynamic var lastName = ""
+    dynamic var email = ""
+    dynamic var token = ""
     var friends = List<User>()
     
     
     override static func primaryKey() -> String? {
         return "id"
+    }
+    
+    required convenience init(json: JSON) {
+        self.init()
+        print(json)
+        id = json["id"].stringValue
+        token = json["token"].stringValue
+        firstName = json["fName"].stringValue
+        lastName = json["lName"].stringValue
+        email = json["email"].stringValue
+        picture = json["pPicture"].stringValue
     }
     
 }

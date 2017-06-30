@@ -27,7 +27,6 @@ class LoginViewController: UIViewController {
         textField.detail = "Error, incorrect email"
         textField.isClearIconButtonEnabled = true
         textField.placeholderActiveColor = Color.blue.base
-        textField.textColor = Color.white
         textField.dividerActiveColor = Color.blue.base
         return textField
     }()
@@ -40,7 +39,6 @@ class LoginViewController: UIViewController {
         textField.isVisibilityIconButtonEnabled = true
         textField.visibilityIconButton?.tintColor = (Color.blue.base).withAlphaComponent(textField.isSecureTextEntry ? 0.38 : 1.0)
         textField.placeholderActiveColor = Color.blue.base
-        textField.textColor = Color.white
         textField.dividerActiveColor = Color.blue.base
         return textField
     }()
@@ -52,6 +50,7 @@ class LoginViewController: UIViewController {
         button.pulseAnimation = .centerWithBacking
         button.depthPreset = .depth4
         button.backgroundColor = UIColor.white
+        button.addTarget(self, action: #selector(loginFunction), for: .touchUpInside)
         return button
     }()
     
@@ -72,13 +71,23 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func prepareTransition() {
+        let tabs = AppTabBarController(viewControllers: [AppNavigationController(rootViewController: MessageViewController()),TrendingViewController(),ViewController(),AppNavigationController(rootViewController: SearchViewController()),AppNavigationController(rootViewController: AccountController())])
+
+        UIApplication.shared.keyWindow?.rootViewController = tabs
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     @objc func configureFacebook() {
             Facebook.loginFacebook { (result) in
-                let tabs = AppTabBarController(viewControllers: [AppNavigationController(rootViewController: MessageViewController()),TrendingViewController(),ViewController(),AppNavigationController(rootViewController: SearchViewController()),AppNavigationController(rootViewController: AccountController())])
-                
-                UIApplication.shared.keyWindow?.rootViewController = tabs
-                
-                self.navigationController?.popToRootViewController(animated: true)
+                self.prepareTransition()
+        }
+    }
+    
+    @objc func loginFunction() {
+        RestAPI.rest.login(email: emailField.text!, password: passwordField.text!) { token in
+            UserDefaults.standard.set(token, forKey: "token")
+            self.prepareTransition()
         }
     }
 }
