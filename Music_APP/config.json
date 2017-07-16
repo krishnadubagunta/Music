@@ -1,5 +1,0 @@
-﻿{
-    "connectionString": "mongodb://localhost:27017/user-register-and-login",
-    "apiUrl": "http://localhost:3000/api",
-    "secret": "keep secret as ur girlfriend's name"
-}
